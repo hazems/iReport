@@ -1,0 +1,12 @@
+<ion-view title="View Featured Reports">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="report in reports" type="item-text-wrap">
+        <img ng-src="{{report.image}}">
+        <h2>{{report.title}}</h2>
+        <p>{{report.description}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
