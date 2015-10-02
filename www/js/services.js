@@ -1,8 +1,7 @@
 angular.module('starter.services', [])
 
 .factory('Reports', function() {
-  // Might use a resource here that returns a JSON array
-
+  
   // Some fake testing data
   var reports = [{
     id: 0,
@@ -36,8 +35,17 @@ angular.module('starter.services', [])
 ];
 
   return {
-    all: function() {
+    getPublished: function() {
       return reports;
+    },
+    getPending: function() {
+      var i, pendingReports = [];
+
+      // Get the first two reports ...
+      for (i = 0; i < 2; ++i) {
+        pendingReports.push(reports[i]);
+      }
+      return pendingReports;
     },
     getFeatured: function() {
       var i, featuredReports = [];
@@ -48,6 +56,51 @@ angular.module('starter.services', [])
         }
       }
       return featuredReports;
+    }
+  };
+})
+
+.factory('CurrentUser', function() {
+  var user = {};
+
+  return {
+    save: function(userData) {
+      console.log("Saving the following user: " + JSON.stringify(userData));
+      user = userData;
+    },
+    load: function() {
+      return user;
+    }
+  };
+})
+
+.factory('LoginService', function(CurrentUser) {
+  return {
+    authenticate: function(userName, password) {
+
+      //TODO authenticate with a back-end service ...
+      console.log("credentails: " + userName + ", " + password);
+      var currentUser = {};
+
+      if (userName == "admin" && password == "password") {
+        currentUser = {
+          authenticated: true,
+          role: "admin"
+        };
+      } else if (userName == "normal" && password == "password") {
+        currentUser = {
+          authenticated: true,
+          role: "normal"
+        };
+      } else {
+        currentUser = {
+          authenticated: false
+        };
+      }
+
+      CurrentUser.save(currentUser);
+
+      return currentUser;
     }
   };
 });

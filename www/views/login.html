@@ -1,0 +1,18 @@
+<ion-view view-title="Welcome to iReport">
+  <ion-content class="padding">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="User Name" ng-model="data.userName">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="data.password">
+      </label>
+    </div>
+
+    <button class="button button-calm button-block icon-left ion-log-in" ion-log-in ng-click="login()"
+            ng-disabled="!data.userName || !data.password">
+      Login
+    </button>
+
+  </ion-content>
+</ion-view>

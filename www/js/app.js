@@ -35,20 +35,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('login', {
+    url: '/login',
+    controller: 'LoginCtrl',
+    templateUrl: 'views/login.html'
+  })
+
+  // setup an abstract state for the tabs directive
+  .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    controller: 'TabsCtrl',
+    templateUrl: 'views/tabs.html'
   })
 
   // Each tab has its own nav history stack:
 
-  .state('tab.all', {
-    url: '/all',
+  .state('tab.published', {
+    url: '/published',
     views: {
-      'tab-all': {
-        templateUrl: 'templates/view-all-reports.html',
-        controller: 'AllReportsCtrl'
+      'tab-published': {
+        templateUrl: 'views/view-reports.html?type=published',
+        controller: 'PublishedReportsCtrl'
       }
     }
   })
@@ -57,7 +65,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/featured',
       views: {
         'tab-featured': {
-          templateUrl: 'templates/view-featured-reports.html',
+          templateUrl: 'views/view-reports.html?type=featured',
           controller: 'FeaturedReportsCtrl'
         }
       }
@@ -67,13 +75,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/submit',
     views: {
       'tab-submit': {
-        templateUrl: 'templates/submit-report.html',
+        templateUrl: 'views/submit-report.html',
         controller: 'SubmitReportsCtrl'
+      }
+    }
+  })
+
+  .state('tab.pending', {
+    url: '/pending',
+    views: {
+      'tab-pending': {
+        templateUrl: 'views/view-reports.html?type=pending',
+        controller: 'PendingReportsCtrl'
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/all');
+  $urlRouterProvider.otherwise('/login');
 
 });

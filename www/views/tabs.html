@@ -5,20 +5,26 @@ navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-  <!-- Dashboard Tab -->
-  <ion-tab title="All" icon-off="ion-android-globe" icon-on="ion-android-globe" href="#/tab/all">
-    <ion-nav-view name="tab-all"></ion-nav-view>
+  <!-- All Reports Tab -->
+  <ion-tab title="Published" icon-off="ion-android-globe" icon-on="ion-android-globe" href="#/tab/published">
+    <ion-nav-view name="tab-published"></ion-nav-view>
   </ion-tab>
 
-  <!-- Chats Tab -->
+  <!-- Featured Reports Tab -->
   <ion-tab title="Featured" icon-off="ion-arrow-graph-up-right" icon-on="ion-arrow-graph-up-right" href="#/tab/featured">
     <ion-nav-view name="tab-featured"></ion-nav-view>
   </ion-tab>
 
-  <!-- Account Tab -->
+
+  <!-- Pending Reports Tab -->
+  <ion-tab title="Pending" icon-off="ion-ios-checkmark" icon-on="ion-ios-checkmark-outline"
+           href="#/tab/pending" class="{{userRole == 'admin'?'ng-show':'ng-hide'}}">
+    <ion-nav-view name="tab-pending"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Submit Reports Tab -->
   <ion-tab title="Submit" icon-off="ion-ios-upload" icon-on="ion-ios-upload-outline" href="#/tab/submit">
     <ion-nav-view name="tab-submit"></ion-nav-view>
   </ion-tab>
-
 
 </ion-tabs>
