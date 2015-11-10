@@ -1,7 +1,7 @@
 angular.module('starter.services', [])
 
 .factory('Reports', function() {
-  
+
   // Some fake testing data
   var reports = [{
     id: 0,
@@ -82,6 +82,7 @@ angular.module('starter.services', [])
       console.log("credentails: " + userName + ", " + password);
       var currentUser = {};
 
+      
       if (userName == "admin" && password == "password") {
         currentUser = {
           authenticated: true,
