@@ -19,6 +19,7 @@ iReport application allows the end users to report the incidents that they see a
  * In the pending tab, the admin user can click any of the available reports to view its details.
  * In the report details, the admin user can approve or reject.
 
-# Diagram
+
+# Use case diagram
 The following figure shows the iReport services use cases and actors.
-![Use case diagram](https://raw.githubusercontent.com/hazems/iReport-Services/master/figures/iReport.png)
+![Use case diagram](https://raw.githubusercontent.com/hazems/iReport/master/figures/iReport.png)
