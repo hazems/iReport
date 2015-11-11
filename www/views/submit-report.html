@@ -1,20 +1,26 @@
 <ion-view view-title="Submit Report">
-
-  <ion-content class="padding">
-    <div class="list list-inset">
-      <label class="item item-input">
-        <input type="text" placeholder="Report Title">
-      </label>
-      <label class="item item-input">
-        <textarea type="text" placeholder="Report Description"></textarea>
-      </label>
-      <button class="button button-light ion-image icon-left">
-        Attach Photo
-      </button>
-    </div>
-
-    <button class="button button-calm button-block">
-      Submit
-    </button>
-  </ion-content>
+    <ion-nav-buttons side="right">
+        <div ng-controller="HeaderCtrl">
+            <button class="button" ng-click="logout()">
+            Logout
+            </button>
+        </div>
+    </ion-nav-buttons>
+    
+    <ion-content class="padding">
+        <div class="list list-inset">
+            <label class="item item-input">
+            <input type="text" placeholder="Report Title">
+            </label>
+            <label class="item item-input">
+            <textarea type="text" placeholder="Report Description"></textarea>
+            </label>
+            <button class="button button-light ion-image icon-left">
+            Attach Photo
+            </button>
+        </div>
+        <button class="button button-calm button-block">
+        Submit
+        </button>
+    </ion-content>
 </ion-view>

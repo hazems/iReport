@@ -3,7 +3,8 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+<ion-tabs class="tabs-icon-bottom tabs-color-active-positive">
 
   <!-- All Reports Tab -->
   <ion-tab title="Published" icon-off="ion-android-globe" icon-on="ion-android-globe" href="#/tab/published">
@@ -18,7 +19,7 @@ navigation history that also transitions its views in and out.
 
   <!-- Pending Reports Tab -->
   <ion-tab title="Pending" icon-off="ion-ios-checkmark" icon-on="ion-ios-checkmark-outline"
-           href="#/tab/pending" class="{{userRole == 'admin'?'ng-show':'ng-hide'}}">
+           href="#/tab/pending" class="{{userRole == 'editor'?'ng-show':'ng-hide'}}">
     <ion-nav-view name="tab-pending"></ion-nav-view>
   </ion-tab>
 
